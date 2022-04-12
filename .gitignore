@@ -3,7 +3,6 @@ logs/*
 .ccls-cache
 .api/jobs.*
 .api/users
-lib/*/
 build/
 instances/*.cnf
 instances/*.cnf.xz
