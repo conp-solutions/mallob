@@ -22,7 +22,7 @@ if [ ! -f yalsat/libyals.a ]; then
     
     cd yalsat
     ./configure.sh
-    make
+    make -j $(nproc)
     cd ..
 else
     echo "Assuming that a correct installation of YalSAT is present."
@@ -34,7 +34,7 @@ if [ ! -f lingeling/liblgl.a ]; then
 
     cd lingeling
     ./configure.sh
-    make
+    make -j $(nproc)
     cd ..
 else
     echo "Assuming that a correct installation of lingeling is present."
@@ -45,7 +45,7 @@ if [ ! -f cadical/libcadical.a ]; then
 
     cd cadical
     ./configure
-    make
+    make -j $(nproc)
     cp build/libcadical.a .
     cd ..
 
