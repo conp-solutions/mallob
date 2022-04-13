@@ -8,4 +8,5 @@ bool JobReader::read(const std::string& file, JobDescription& desc) {
     case JobDescription::SAT:
         return SatReader(file).read(desc);
     }
+    throw "given job type not implemented";
 }
