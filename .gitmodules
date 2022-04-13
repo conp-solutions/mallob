@@ -1,15 +1,15 @@
 [submodule "lib/cadical"]
 	path = lib/cadical
-	url = git@github.com:conp-solutions/cadical.git
+	url = https://github.com/conp-solutions/cadical.git
 [submodule "lib/mergesat"]
 	path = lib/mergesat
-	url = git@github.com:conp-solutions/mergesat.git
+	url = https://github.com/conp-solutions/mergesat.git
 [submodule "lib/lingeling"]
 	path = lib/lingeling
-	url = git@github.com:conp-solutions/lingeling.git
+	url = https://github.com/conp-solutions/lingeling.git
 [submodule "lib/yalsat"]
 	path = lib/yalsat
-	url = git@github.com:conp-solutions/yalsat.git
+	url = https://github.com/conp-solutions/yalsat.git
 [submodule "lib/glucose"]
 	path = lib/glucose
 	url = git@github.com:conp-solutions/glucose3.0-hack-track.git
