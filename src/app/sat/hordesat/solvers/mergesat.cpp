@@ -8,8 +8,8 @@
  */
 
 #include "mergesat.hpp"
-#include "mergesat/minisat/utils/System.h"
-#include "mergesat/minisat/simp/SimpSolver.h"
+#include "utils/System.h"
+#include "simp/SimpSolver.h"
 
 using namespace Minisat; // MergeSat as default still uses Minisat as namespace for compatibility
 

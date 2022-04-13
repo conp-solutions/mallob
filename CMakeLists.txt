@@ -23,9 +23,9 @@ endif()
 
 # Libraries and includes
 
-link_directories(lib/lingeling lib/yalsat lib/cadical lib/glucose lib/mergesat)
+link_directories(lib/lingeling lib/yalsat lib/cadical lib/mergesat)
 set(BASE_LIBS ${MPI_CXX_LIBRARIES} ${MPI_CXX_LINK_FLAGS} m z lgl yals pthread cadical mergesat rt dl)
-set(BASE_INCLUDES ${MPI_CXX_INCLUDE_PATH} src lib/lingeling lib/glucose lib)
+set(BASE_INCLUDES ${MPI_CXX_INCLUDE_PATH} src lib/lingeling lib/mergesat lib)
 
 
 # Source files
@@ -45,16 +45,6 @@ set(BASE_SOURCES
     src/util/sys/fileutils.cpp src/util/sys/process.cpp src/util/sys/proc.cpp src/util/sys/shared_memory.cpp src/util/sys/terminator.cpp src/util/sys/timer.cpp src/util/sys/watchdog.cpp
     src/util/ringbuf/ringbuf.c
 )
-set(RESTRICTED_SOURCES src/app/sat/hordesat/solvers/glucose.cpp)
-
-if(MALLOB_USE_RESTRICTED)
-    set(BASE_SOURCES ${BASE_SOURCES} ${RESTRICTED_SOURCES})
-    set(BASE_LDIRS ${BASE_LDIRS} src/app/sat/hordesat/glucose)
-    set(BASE_LIBS ${BASE_LIBS} glucose)
-    set(BASE_INCLUDES ${BASE_INCLUDES} src/app/sat/hordesat/glucose)
-    add_definitions(-DMALLOB_USE_RESTRICTED)
-endif()
-
 
 # Library with source files common to mallob and mallob_sat_process
 
