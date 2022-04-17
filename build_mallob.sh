@@ -11,7 +11,7 @@ cd lib
 cd ..
 
 # Build mallob
-mkdir build
+mkdir -p build
 cd build
 cmake -DCMAKE_BUILD_TYPE=RELEASE ..
 VERBOSE=1 make -j $(nproc)
