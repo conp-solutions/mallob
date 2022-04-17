@@ -10,7 +10,7 @@ set -e
 if [ ! -f mergesat/libmergesat.a ]; then
     # Make MergeSat
     cd mergesat
-    make all -j $(nproc)
+    make all -j $(nproc) CXX_EXTRA_FLAGS=-DNO_PREFETCHING
     cp build/release/lib/libmergesat.a .
     cd ..
 else
@@ -33,7 +33,7 @@ if [ ! -f lingeling/liblgl.a ]; then
     echo "Building lingeling ..."
 
     cd lingeling
-    ./configure.sh
+    ./configure.sh -flto --no-check
     make -j $(nproc)
     cd ..
 else
@@ -44,7 +44,7 @@ if [ ! -f cadical/libcadical.a ]; then
     echo "Building CaDiCaL ..."
 
     cd cadical
-    ./configure
+    ./configure CXXFLAGS="-DNO_PREFETCHING -flto" --competition
     make -j $(nproc)
     cp build/libcadical.a .
     cd ..
