@@ -35,13 +35,14 @@ void Cadical::diversify(int seed) {
 		bool okay = solver->set("seed", seed);
 		assert(okay);
 		switch (getDiversificationIndex() % getNumOriginalDiversifications()) {
-		case 1: okay = solver->configure ("plain"); break;
-		case 2: okay = solver->set("walk", 0); break;
-		case 3: okay = solver->set("inprocessing", 0); break;
-		case 4: okay = solver->set("restartint", 100); break;
-		case 5: okay = solver->set("phase", 0); break;
-		case 6: okay = solver->set("decompose", 0); break;
-		case 7: okay = solver->set("elim", 0); break;
+		case 1: okay = solver->configure ("watchsat"); break;
+		case 2: okay = solver->configure ("plain"); break;
+		case 3: okay = solver->set("walk", 0); break;
+		case 4: okay = solver->set("inprocessing", 0); break;
+		case 5: okay = solver->set("restartint", 100); break;
+		case 6: okay = solver->set("phase", 0); break;
+		case 7: okay = solver->set("decompose", 0); break;
+		case 8: okay = solver->set("elim", 1); break;
 		case 0: default: break;
 		//case 6: solver->set("cover", 1); break;
 		//case 7: solver->set("chrono", 0); break;
