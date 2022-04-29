@@ -79,7 +79,7 @@ OPT_STRING(balanceRoundingMode,          "r",  "",                          "bis
 OPT_STRING(hordeConfig,                  "hConf", "",                       "",                         "Supply Horde config for solver subprocess [internal option, do not use]")
 OPT_STRING(logDirectory,                 "log", "log-directory",            "",                         "Directory to save logs in")
 OPT_STRING(monoFilename,                 "mono", "",                        "",                         "Mono instance: Solve the provided CNF instance with full power, then exit")
-OPT_STRING(satSolverSequence,            "satsolver",  "",                  "L",                        "Sequence of SAT solvers to cycle through for each job, one character per solver (capital letter for true incremental solver, lowercase for pseudo-incremental solving): l=lingeling c=cadical g=glucose m=mergesat")
+OPT_STRING(satSolverSequence,            "satsolver",  "",                  "mcL",                      "Sequence of SAT solvers to cycle through for each job, one character per solver (capital letter for true incremental solver, lowercase for pseudo-incremental solving): l=lingeling c=cadical g=glucose m=mergesat")
 OPT_STRING(solutionToFile,               "s2f", "solution-to-file",         "",                         "Write solutions to file with provided base name + job ID")
 
 #endif
